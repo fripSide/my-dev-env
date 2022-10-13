@@ -36,7 +36,7 @@ jobs:
           push: true
           tags: |
             ${{ matrix.UBUNTU_VERSION == '22.04' && 'fripside2021/my-dev:latest' || '' }}
-            nyamisty/dev:${{ matrix.UBUNTU_VERSION }}
+            fripside2021/my-dev:${{ matrix.UBUNTU_VERSION }}
           build-args: UBUNTU_VERSION=${{ matrix.UBUNTU_VERSION }}
       #-
       #  name: Update repo description
