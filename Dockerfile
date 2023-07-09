@@ -58,6 +58,10 @@ RUN export PYENV_ROOT="${PYENV_ROOT:-/opt/pyenv}" && export PATH="$PYENV_ROOT/bi
 
 ADD .zshrc.local /root/.zshrc.local
 
+COPY set_proxy.sh /root/set_proxy.sh
+COPY unset_proxy.sh /root/unset_proxy.sh
+
+
 RUN cd ~ && git clone https://github.com/NyaMisty/.misty_envconf_pub && rm ~/.zshrc && ~/.misty_envconf_pub/install.sh
 
 CMD ["zsh"]
