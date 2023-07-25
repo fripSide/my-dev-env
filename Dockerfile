@@ -56,6 +56,8 @@ RUN export PYENV_ROOT="${PYENV_ROOT:-/opt/pyenv}" && export PATH="$PYENV_ROOT/bi
     pip install requests ipython && \
     pip3 install requests ipython
 
+RUN git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+
 ADD .zshrc.local /root/.zshrc.local
 
 COPY set_proxy.sh /root/set_proxy.sh

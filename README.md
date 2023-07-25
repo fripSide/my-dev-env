@@ -1,6 +1,17 @@
 # Simple Dev Docker
 
-A pre-built docker image of Ubuntu 20.04, with basic daily tools shipped with usual distributions
+A pre-built docker image of Ubuntu 20.04, with basic daily tools shipped with usual distributions  
+
+
+	```
+	docker run -it --name dev --privileged fripside2021/my-dev:latest bash
+
+	# docker in docker配置
+	docker run -v /var/run/docker.sock:/var/run/docker.sock -it --name dev --privileged fripside2021/my-dev:latest bash
+
+	docker start dev
+	```
+
 
 ## Exact things included
 
