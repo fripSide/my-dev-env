@@ -10,7 +10,8 @@ jobs:
   docker:
     strategy:
       matrix:
-        UBUNTU_VERSION: [20.04, 22.04, 18.04]
+        UBUNTU_VERSION: [24.04]
+        ARCH: ["amd64", "arm64v8"]
     runs-on: ubuntu-latest
     steps:
       -
@@ -35,9 +36,11 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ matrix.UBUNTU_VERSION == '22.04' && 'fripside2021/my-dev:latest' || '' }}
-            fripside2021/my-dev:${{ matrix.UBUNTU_VERSION }}
-          build-args: UBUNTU_VERSION=${{ matrix.UBUNTU_VERSION }}
+            ${{ matrix.UBUNTU_VERSION == '24.04' && 'fripside2021/my-dev:latest' || '' }}
+            fripside2021/my-dev:${{ matrix.ARCH }}-${{ matrix.UBUNTU_VERSION }}
+          build-args: 
+            UBUNTU_VERSION=${{ matrix.UBUNTU_VERSION }}
+            ARCH=${{ matrix.ARCH }}
       #-
       #  name: Update repo description
       #  uses: peter-evans/dockerhub-description@v2

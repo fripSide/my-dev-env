@@ -4,12 +4,12 @@
 Please just use the official Ubuntu Docker Image (Updated in 2024-10-25):  
 https://hub.docker.com/_/ubuntu  
 
-	```
+
 	# x86
 	docker run -it --name dev -h hy --privileged amd64/ubuntu:24.04 bash
 	# arm64
 	docker run -it --name dev -h hy --privileged arm64v8/ubuntu:24.04 bash
-	```
+
 
 
 ## Customized Container with zsh (Deprecated)  
