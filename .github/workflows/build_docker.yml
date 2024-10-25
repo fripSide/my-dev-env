@@ -38,6 +38,9 @@ jobs:
           tags: |
             ${{ matrix.UBUNTU_VERSION == '24.04' && 'fripside2021/my-dev:latest' || '' }}
             fripside2021/my-dev:${{ matrix.ARCH }}-${{ matrix.UBUNTU_VERSION }}
+          platforms: 
+            - linux/amd64
+            - linux/arm64 
           build-args: |
             UBUNTU_VERSION=${{ matrix.UBUNTU_VERSION }}
             ARCH=${{ matrix.ARCH }}
