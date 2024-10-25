@@ -15,7 +15,7 @@ RUN apt-get update && \
         # user tool packages \
         screen tmux zip unzip p7zip-full p7zip-rar nmap socat proxychains4 \
         # user tool packages2
-        strace net-tools iproute2 \
+        strace net-tools iproute2 iputils-ping \
         && apt-get clean && rm -rf /var/lib/apt/lists/*;
 
 RUN apt-get update && \
