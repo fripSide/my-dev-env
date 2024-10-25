@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         UBUNTU_VERSION: [24.04]
-        ARCH: ["amd64", "arm64v8"]
+        ARCH: ["amd64"]
     runs-on: ubuntu-latest
     steps:
       -
