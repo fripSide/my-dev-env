@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         UBUNTU_VERSION: [24.04]
-        ARCH: ["arm64v8"]
+        ARCH: ["amd64", "arm64v8"]
     runs-on: ubuntu-latest
     steps:
       -
@@ -39,7 +39,7 @@ jobs:
             ${{ matrix.UBUNTU_VERSION == '24.04' && 'fripside2021/my-dev:latest' || '' }}
             fripside2021/my-dev:${{ matrix.ARCH }}-${{ matrix.UBUNTU_VERSION }}
           platforms: |
-            linux/arm64 
+            linux/${{ matrix.ARCH == 'arm64v8' && 'arm64' || 'amd64' }} 
           build-args: |
             UBUNTU_VERSION=${{ matrix.UBUNTU_VERSION }}
             ARCH=${{ matrix.ARCH }}
